@@ -5,7 +5,7 @@ class Validator:
     def __init__(self, text: str) -> None:
         self._data = text
 
-    def data(self, index: int) -> dict:
+    #def data(self, index: int) -> dict:
 
 
 

@@ -11,7 +11,7 @@ class Read_file:
         self._text = read.read()
         read.close()
         self._text = re.sub('\n', '', self._text)
-        self._text = re.sub('\ +', '', self._text)
+        self._text = re.sub('\ +', ' ', self._text)
         self._text = re.sub(r'\[', '', self._text)
         self._text = re.sub(r'\]', '', self._text)
         self._text = re.sub(r'"', '', self._text)
