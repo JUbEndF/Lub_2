@@ -63,7 +63,7 @@ class Data:
         else:
             return False
 
-    def check(self) -> bool:
+    def check_address(self) -> bool:
         pattern = '(([Аа]ллея)|([Уу]лица)|(ул.))((([А-яёЁ ]?)+)?)([ А-Я. ]*)(\d+)'
         if re.match(pattern, self.info[8]) is not None:
             return True

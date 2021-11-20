@@ -1,6 +1,6 @@
+from ValigatorCollection import Validator_list
 from Read_file import Read_file
-#from Valigator import Validator
-import re
+
 
 
 
@@ -9,8 +9,7 @@ abs_file_read = "C:/Users/Георгий/Downloads/1.txt" #input("Input path to 
 #abs_file_write = input("Input path to write file ")
 
 lines = Read_file(abs_file_read)
-lines = lines.text()
+spisok = Validator_list(lines.text())
 
-print(lines)
-
-
+for i in spisok.data():
+    print(i)
