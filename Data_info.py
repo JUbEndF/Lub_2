@@ -3,18 +3,8 @@ import re
 class Data:
     info: dict
 
-    def __init__(self, line: str):
-        self.info = {
-            "email": line[0],#+
-            "weight": line[1],#+
-            "snils": line[2],#+
-            "passport_series": line[3],#+
-            "university": line[4],#+
-            "age": line[5],#+
-            "academic_degree": line[6],#+
-            "worldview": line[7],#+
-            "address": line[8]#
-        }
+    def __init__(self, line: dict):
+        self.info = line.copy()
 
     def check_email(self) -> bool:
 
@@ -41,12 +31,13 @@ class Data:
         return False
 
     def chech_age(self) -> bool:
-        if  17 < int(self.info[5])& int(self.info[5]) < 65:
+        if 17 < int(self.info[5]) & int(self.info[5]) < 65:
             return True
         return False
 
     def check_snils(self) -> bool:
         return self.check_number("snils", 11)
+
     def check_passport_series(self) -> bool:
         return self.check_number("passport_series", 4)
 
