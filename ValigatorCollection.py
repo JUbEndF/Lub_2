@@ -9,6 +9,9 @@ class Validator_list:
         """Конструктор класса, на вход принимает массив"""
         self._array = array
 
+    def array(self) -> list:
+        return self._array.copy()
+
     def count_invalid_arguments(self):
         """Функция проверки массива на количество некорректных записей в словарях, возвращаетмассив с их колисеством"""
 
