@@ -15,6 +15,7 @@ class Read_file:
             self._array.append(Data(i.copy()))
 
     def array_list(self) -> list:
+        """Метод возвращающий копию списка всех данных"""
         return self._array.copy()
 
 

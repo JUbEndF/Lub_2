@@ -5,6 +5,7 @@ class Write_file:
     _file_path: str
 
     def __init__(self, file_path) -> None:
+        '''Класс принимает путь к файлу для записи данных'''
         self._file_path = file_path
 
     def write_file(self, array: list) -> None:

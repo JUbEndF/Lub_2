@@ -1,6 +1,7 @@
 import re
 
 class Data:
+    '''Класс единичного словаря данных'
     _info: dict
 
     def __init__(self, line: dict):
