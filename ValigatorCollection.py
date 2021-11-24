@@ -1,4 +1,3 @@
-import re
 from Data_info import Data
 from tqdm import tqdm
 
