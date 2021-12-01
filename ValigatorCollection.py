@@ -12,6 +12,13 @@ class Validator_list:
         """Метод возвращающий копию списка всех данных"""
         return self._array.copy()
 
+    def array_valid(self) -> list:
+        rez = []
+        for i in tqdm(range(len(self._array)), desc="Создание валидного списка", ncols=100):
+            if self._array[i].check_valid():
+                rez.append(self._array[i].info())
+        return rez
+
     def count_invalid_arguments(self):
         """Функция проверки массива на количество некорректных записей в словарях(+ по типу ошибок), возвращаетмассив с их колисеством"""
 

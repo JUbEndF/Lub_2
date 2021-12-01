@@ -1,7 +1,9 @@
 from Read_file import Read_file
 from ValigatorCollection import Validator_list
 from Write_file import Write_file
+from sort import sort_puzirek
 import argparse
+import pickle
 
 parser = argparse.ArgumentParser("Input & output path")
 parser.add_argument("-read", type=str, default="1.txt", help="Read path")
@@ -30,3 +32,15 @@ print("Ошибка в написании возраста: ", rez[7])
 print("Ошибка в написании академической степени: ", rez[8])
 print("Ошибка в написании вероисповедания: ", rez[9])
 print("Ошибка в написании адреса: ", rez[10])
+
+arr = data.array_valid()
+arr = sort_puzirek(arr)
+
+with open('data.pickle', 'wb') as f:
+    pickle.dump(arr, f)
+
+with open('data.pickle', 'rb') as f:
+    data_new = pickle.load(f)
+for i in data_new:
+    print(i)
+

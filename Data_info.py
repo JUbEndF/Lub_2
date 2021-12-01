@@ -1,22 +1,24 @@
 import re
 
 class Data:
-    '''Класс единичного словаря данных'
+    '''Класс единичного словаря данных'''
     _info: dict
 
     def __init__(self, line: dict):
         self._info = line.copy()
 
     def check_valid(self) -> bool:
-        if self.check_email() & self.check_age() & self.check_snils() & self.check_academic_degree() & self.check_passport_series() & self.check_address() & self.check_weight() & self.check_university() & self.check_worldview():
+        if self.check_email() and self.check_age() and self.check_snils() and self.check_academic_degree() and self.check_passport_series() and self.check_address() and self.check_weight() and self.check_university() and self.check_worldview():
             return True
         return False
+
 
     def info(self) -> dict:
         return self._info.copy()
 
     def check_number(self, name: str, size: int) -> bool:
-        if re.match(r'\d{size}', self._info[name]):
+        pattern = "\d{size}"
+        if re.match(pattern, self._info[name]):
             return False
         return True
 
@@ -37,11 +39,14 @@ class Data:
         return self.check_number("snils", 11)
 
     def check_passport_series(self) -> bool:
-        return self.check_number("passport_series", 4)
+        pattern = "[\d{2}\s]"
+        if re.match(pattern, self._info["passport_series"]):
+            return True
+        return False
 
     def check_university(self) -> bool:
-        pattern = '([Уу]ниверситет|[Aа]кадем| [Ии]нститут|им. |[Пп]олитех|([А-Я]{3,}))+(\s|[а-я])'
-        if re.match(pattern, self._info["university"]) is not None:
+        pattern = '([Уу]ниверситет|[Aа]кадем|[Ии]нститут|им.|[Пп]олитех|([А-Я]{3,}))+(\s|[а-я])'
+        if re.match(pattern, self._info["university"]):
             return True
         else:
             return False

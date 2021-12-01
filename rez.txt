@@ -12551,17 +12551,6 @@
         "address": "ул. Полярная 47"
     },
     {
-        "email": "impious1973@protonmail.com",
-        "weight": 70,
-        "snils": "24109612335",
-        "passport_series": "S6 14",
-        "university": "САУ им. С.П. Королева",
-        "age": 50,
-        "academic_degree": "Магистр",
-        "worldview": "Буддизм",
-        "address": "ул. Гжатская 1024"
-    },
-    {
         "email": "hodad2064@yandex.com",
         "weight": 88,
         "snils": "06491557891",
